@@ -11,7 +11,7 @@ If you are running on an ARM64 machine (e.g. a Mac + Alpine Linux VM), STOP and 
         For Alpine Linux: <code>apk add coreutils dtc python3 py3-elftools</code>
     </li>
     <li>
-        Run <code>env CROSS_COMPILE=your_toolchains_path- compile.sh rk3566-pinenote</code> twice, first for regular U-Boot and then a second time by adding the <code>spl</code> argument to build <code>rk356x_spl_loader_v1.20.114.bin</code>.
+        Run <code>env CROSS_COMPILE=your_toolchains_path- compile.sh rk3566-pinenote</code> twice, first for regular U-Boot and then a second time by replacing the second argument by the <code>spl</code> argument to build <code>rk356x_spl_loader_v1.20.114.bin</code>.
     </li>
     <li>
         From existing U-Boot, run rockusb 0 mmc 0 to trigger rockusb mode. If you were connected via the serial dongle, quit picocom/minicom cleanly and unplug it. Then, plug an ordinary USB-C cable on the device.
