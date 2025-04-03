@@ -1,6 +1,5 @@
 # U-Boot
 ## Compiling and running
-
 <ol>
     <li>
         U-Boot sources are located at https://github.com/PorQ-Pine/u-boot-pinenote. You also have to clone the https://github.com/rockchip-linux/rkbin repository in your root directory.
@@ -22,3 +21,6 @@ If you are running on an ARM64 machine (e.g. a Mac + Alpine Linux VM), STOP and 
         Run <code>rkdeveloptool boot rk356x_spl_loader_v1.20.114.bin</code>. To check if it worked, check if <code>rkdeveloptool read-flash-info</code> outputs anything useful.
     </li>
 </ol>
+
+## Entering fastboot mode
+One can enter fastboot mode by issuing <code>fastboot usb 0</code> at the serial console. If you are using the serial dongle, make sure to quit your terminal program cleanly and plug back regular USB to access fastboot.
