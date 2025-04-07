@@ -24,8 +24,11 @@ If you are running on an ARM64 machine (e.g. a Mac + Alpine Linux VM), STOP and 
     </li>
 </ol>
 
+### Boot menu
+To build the U-Boot splash screens (boot menu), issue `pushd pinenote_ui/; ./build_all.sh; popd` from the U-Boot root directory. Then, flash the newly-created logo partition's image by issuing `rkdeveloptool write-partition logo pinenote_ui/logo_new.img`.
+
 ### Regular U-Boot
-After following the steps in the previous section, you should have built a proper `uboot.img` file. You can flash it to the device by issuing `rkdeveloptool write-partition uboot uboot.img`.
+After following the steps in the previous sections, you should have built a proper `uboot.img` file. You can flash it to the device by issuing `rkdeveloptool write-partition uboot uboot.img`.
 
 ## Entering fastboot mode
 One can enter fastboot mode by issuing <code>fastboot usb 0</code> at the serial console. If you are using the serial dongle, make sure to quit your terminal program cleanly and plug back regular USB to access fastboot.
