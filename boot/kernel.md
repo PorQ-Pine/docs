@@ -3,7 +3,7 @@
 ### Required packages that were not installed at the U-Boot compiling step
 Alpine Linux:
 ```
-apk add ncurses-dev flex bison gmp-dev mpc1-dev openssl-dev mpfr-dev findutils
+apk add ncurses-dev flex bison gmp-dev mpc1-dev openssl-dev mpfr-dev findutils perl
 ```
 ### Compiling the kernel
 ```
