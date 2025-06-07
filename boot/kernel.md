@@ -3,7 +3,23 @@
 ### Required packages that were not installed at the U-Boot compiling step
 Alpine Linux:
 ```
-apk add ncurses-dev flex bison gmp-dev mpc1-dev openssl-dev mpfr-dev findutils perl
+apk add ncurses-dev flex bison gmp-dev mpc1-dev openssl-dev mpfr-dev findutils perl linux-headers
+```
+### Preparing the init ramdisk
+Download the latest stable BusyBox source and extract it. At the time of writing this guide, it is this one: https://busybox.net/downloads/busybox-1.37.0.tar.bz2
+
+If ever you want to modify the configuration with `menuconfig` and if you are running some rather unforgiving Alpine Linux version, run
+```
+sed -i 's/main()/int main()/g' scripts/kconfig/lxdialog/check-lxdialog.sh
+```
+
+Otherwise, proceed by copying the configuration [here](https://github.com/PorQ-Pine/docs/raw/refs/heads/main/boot/resources/busybox-config) as the `.config` file in the root of the directory tree you just extracted.
+
+If you are on aarch64 Alpine Linux, apply the following patch: https://lists.busybox.net/pipermail/busybox/2024-September/090899.html
+
+Then, compile and install BusyBox with the following commands:
+```
+env CROSS_COMPILE=your_toolchains_path- make install
 ```
 ### Compiling the kernel
 ```
