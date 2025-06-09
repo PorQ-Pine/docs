@@ -27,7 +27,11 @@ Issue the following commands:
 git clone https://github.com/PorQ-Pine/kernel
 cd kernel
 ln -s ../your_busybox_folder/_install initrd
+env CROSS_COMPILE=your_toolchains_path- make distclean
 env CROSS_COMPILE=your_toolchains_path- make pinenote_defconfig
+env CROSS_COMPILE=your_toolchains_path- make
+env CROSS_COMPILE=your_toolchains_path- make modules_install INSTALL_MOD_PATH="$PWD/initrd_base/"
+env CROSS_COMPILE=your_toolchains_path- make # This is not a typo
 ```
 In the next step, you will need the following files: `arch/arm64/boot/Image.gz` and `arch/arm64/boot/dts/rockchip/rk3566-pinenote-v1.2.dtb`. I put them in `/tmp` for the example below.
 ### Booting the kernel
