@@ -22,12 +22,21 @@ Then, compile and install BusyBox with the following commands:
 env CROSS_COMPILE=your_toolchains_path- make install
 ```
 ### Compiling the kernel
-Issue the following commands:
+**NOTE:** the `build_kernel.sh` scripts implements all of the things below in an automated way.
+
+First, generate your master RSA signing key:
+```
+openssl genrsa -out private.pem 2048
+openssl rsa -in private.pem -out public.pem -outform PEM -pubout
+```
+Then, issue the following commands:
 ```
 git clone https://github.com/PorQ-Pine/kernel
 cd kernel
 ln -s ../your_busybox_folder/_install initrd
 git rev-parse --short HEAD > initrd_base/.commit
+echo true > initrd_base/.rooted # You probably want a rooted kernel
+openssl dgst -sha256 -sign private.pem -out initrd_base/.rooted.dgst initrd_base/.rooted
 rm -rf initrd_base/lib
 env CROSS_COMPILE=your_toolchains_path- make distclean
 env CROSS_COMPILE=your_toolchains_path- make pinenote_defconfig
