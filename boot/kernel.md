@@ -40,6 +40,7 @@ openssl dgst -sha256 -sign private.pem -out initrd_base/.rooted.dgst initrd_base
 rm -rf initrd_base/lib
 env CROSS_COMPILE=your_toolchains_path- make distclean
 env CROSS_COMPILE=your_toolchains_path- make pinenote_defconfig
+sed -i 's/\(CONFIG_CMDLINE=".*\)\("\)/\1 '"$(cat public.pem | base64 | tr -d '\n')"'"/' .config
 env CROSS_COMPILE=your_toolchains_path- make
 env CROSS_COMPILE=your_toolchains_path- make modules_install INSTALL_MOD_PATH="$PWD/initrd_base/"
 env CROSS_COMPILE=your_toolchains_path- make # This is not a typo
