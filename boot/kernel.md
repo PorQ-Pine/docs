@@ -35,8 +35,6 @@ git clone https://github.com/PorQ-Pine/kernel
 cd kernel
 ln -s ../your_busybox_folder/_install initrd
 git rev-parse --short HEAD > initrd_base/.commit
-echo true > initrd_base/.rooted # You probably want a rooted kernel
-openssl dgst -sha256 -sign private.pem -out initrd_base/.rooted.dgst initrd_base/.rooted
 rm -rf initrd_base/lib
 env CROSS_COMPILE=your_toolchains_path- make distclean
 env CROSS_COMPILE=your_toolchains_path- make pinenote_defconfig
