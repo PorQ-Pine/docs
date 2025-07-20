@@ -28,7 +28,7 @@ git clone https://github.com/PorQ-Pine/kernel
 cd kernel
 git clone https://github.com/PorQ-Pine/quill-init
 ln -s ../your_busybox_folder/_install initrd
-CROSS_COMPILE=your_toolchains_path- INIT_DEBUG=1 THREADS=desired_threads_number_for_make ./build_kernel.sh
+CROSS_COMPILE=your_toolchains_path- QUILL_INIT_FEATURES="debug free_roam" THREADS=desired_threads_number_for_make ./build_kernel.sh
 ```
 In the next step, you will need the following files: `arch/arm64/boot/Image.gz` and `arch/arm64/boot/dts/rockchip/rk3566-pinenote-v1.2.dtb`. I put them in `/tmp` for the example below.
 ### Booting the kernel
