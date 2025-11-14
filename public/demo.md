@@ -1,3 +1,5 @@
+Direct [link](https://github.com/user-attachments/assets/6cb31c85-2c8d-4def-95e3-5058dfc688b4) to demo if it doesn't launch
+
 https://github.com/user-attachments/assets/6cb31c85-2c8d-4def-95e3-5058dfc688b4
 
 Some notes about the demo:
