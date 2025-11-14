@@ -1,6 +1,6 @@
-Direct [link](https://github.com/user-attachments/assets/6cb31c85-2c8d-4def-95e3-5058dfc688b4) to demo if it doesn't launch
+Direct [link](https://github.com/user-attachments/assets/a87ba51e-53dd-4928-be5f-0d06486a8251) to demo if it doesn't launch
 
-https://github.com/user-attachments/assets/6cb31c85-2c8d-4def-95e3-5058dfc688b4
+https://github.com/user-attachments/assets/a87ba51e-53dd-4928-be5f-0d06486a8251
 
 Some notes about the demo:
 - Rotation doesn't work yet in niri: https://github.com/YaLTeR/niri/issues/2741
