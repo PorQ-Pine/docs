@@ -10,3 +10,5 @@ Also, the graph makes more sense once you understand the partition table we modi
 - p6 - debian home stuff (moved and resized here)
 - p7 - quill recovery containing kernel, firmware and maybe local rootfs release backup? (max 4G for now let's say) (ext4)
 - p8 - quill normal containing rootfs and user data (ext4)
+
+So like, we have more space to work with and we don't need to share home with an unknown system. (Also old debian is still fully usable after that)
