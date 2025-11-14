@@ -1,0 +1,75 @@
+CPU magic -> uboot
+uboot: "uboot\
+\n🪶With modified boot entries so they look better"
+
+UMSK: "🪶UMS kernel\
+\nMinimal kernel which after booting exposes the whole disk over USB\
+\nIt's located in the logo partition, which is hacky but makes it more break resistant"
+uboot -> UMSK
+
+QuillStrap: "🪶QuillStrap\
+\n Which installs all other things (Mainly via using UMS)"
+UMSK -> QuillStrap
+
+HRDLK: "HRDL's awesome kernel"
+uboot -> HRDLK
+
+Alpine: "Alpine\nMinimal alpine base system"
+HRDLK -> Alpine
+
+QuillInit: {|md
+🪶🦀Our Init program, which sets up a few things like:
+- Progress bar for booting
+- Recovery program, which can restore anything below to first boot state, or connect to wifi for ssh, etc
+- Logs in the user in rootfs (Shows login UI, decrypts home directory)
+(doesn't wait for systemd to finish booting, so you can type while it's still loading)
+- Written in Slint, doesn't rely on a window manager
+|}
+Alpine -> QuillInit
+
+FuseOverlay: "🪶FuseOverlay setup for rootfs\
+\n Allows reverting changes made to fedora easier (but makes updates more complicated)\
+\n Basically a RW layer for fedora (except home directories), enabled by default"
+QuillInit -> FuseOverlay
+
+Fedora: "Fedora\n Pure ARM fedora with systemd (Adjusted things for pinenote)"
+FuseOverlay -> Fedora
+
+Qoms: "🪶🦀Qoms\
+\n Quill OS main service"
+Fedora -> Qoms
+Qoms <-> QuillInit: "Gets login data"
+
+Greetd: "🦀Greetd"
+Qoms -> Greetd: "Logs in the user"
+
+Niri: "🦀Niri\
+\n Niri's window tiling makes the experience very similar to tablet's,\
+\n but it's linux, wayland!"
+Greetd -> Niri
+
+Eww: "🦀Eww widgets\
+\n For the toolbar\
+\n custom looking and eink adjusted🪶"
+Dunst: "Dunst\
+\n for notifications deamon"
+SwayBg: "swaybg\
+\n For the wallpaper"
+squeekboard: "🦀squeekboard\
+\n For the virtual keyboard\
+\n(maliit keyboard did not work)"
+
+Niri -> Eww
+Niri -> Dunst
+Niri -> SwayBg
+Niri -> squeekboard
+
+NwgDrawer: "nwg-drawer as app launcher"
+Niri -> NwgDrawer
+
+OtherApps: "And all other apps you want"
+NwgDrawer -> OtherApps
+
+Xournalpp: "Xournalpp\
+\n with a custom config and toolbar🪶"
+NwgDrawer -> Xournalpp
