@@ -1,4 +1,4 @@
-[This](./graph.svg) shows pretty much how it's done
+[This](./graph.png) shows pretty much how it's done
 
 How to read it:
 - 🪶 Means it's written/designed from ground up / modified heavily just for the pinenote. I just wanted to see how much things we create and how much we reuse
