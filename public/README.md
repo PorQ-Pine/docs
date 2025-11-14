@@ -19,7 +19,7 @@ Because we learn from our mistakes, sometimes (And the Pinenote user target is d
 5. Choosing solutions which are easily maintanable and follow current standards of doing things (As in, not hacky solutions, old Quill was a bit spaghetti in the case of design)
 
 ### Current state
-Usable for advanced users, but there are many major and minor issues to be solved
+"Usable" for advanced users, but there are many major and minor issues to be solved
 
 ### Technical overview
 Look into [technical/README.md](./technical/README.md)
