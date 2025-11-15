@@ -1,41 +1,41 @@
 CPU magic -> uboot
-uboot: "uboot\
+uboot: "U-Boot\
 \n🪶With modified boot entries so they look better"
 
-UMSK: "🪶UMS kernel\
-\nMinimal kernel which after booting exposes the whole disk over USB\
-\nIt's located in the logo partition, which is hacky but makes it more break resistant"
+UMSK: "🪶UMS (USB Mass Storage) kernel\
+\nMinimal kernel (with embedded initrd) that exposes the whole disk over USB\
+\nIt's located in the logo partition, which is hacky but makes it more break-resistant"
 uboot -> UMSK
 
 QuillStrap: "🪶QuillStrap\
-\n Which installs all other things (Mainly via using UMS)"
+\nInstalls all other things (mainly via UMS kernel)"
 UMSK -> QuillStrap
-QuillStrap -> uboot: "Also flashes uboot, it installs really everything"
+QuillStrap -> uboot: "Also flashes U-Boot (installs really everything)"
 
 HRDLK: "HRDL's awesome kernel"
 uboot -> HRDLK
 
 Alpine: "Alpine\
-\nMinimal alpine base system"
+\nMinimal Alpine Linux base system used as initrd"
 HRDLK -> Alpine
 
 QuillInit: {|md
-🪶🦀Our Init program, which sets up a few things like:
-- Progress bar for booting
-- Recovery program, which can restore anything below to first boot state, or connect to wifi for ssh, etc
-- Logs in the user in rootfs (Shows login UI, decrypts home directory)
+🪶🦀Our initialization program. It sets up a few things, like:
+- Progress bar for showing boot progress
+- Recovery program, which can restore anything below to first boot state, or connect to Wi-Fi for ssh, etc.
+- Logs in the user in rootfs (shows login UI, decrypts home directory)
 (doesn't wait for systemd to finish booting, so you can type while it's still loading)
 - Written in Slint, doesn't rely on a window manager
 |}
 Alpine -> QuillInit
 
-FuseOverlay: "🪶FuseOverlay setup for rootfs\
-\n Allows reverting changes made to fedora easier (but makes updates more complicated)\
-\n Basically a RW layer for fedora (except home directories), enabled by default"
+FuseOverlay: "🪶fuse-overlayfs setup for rootfs\
+\n Allows reverting changes made to Fedora (see below) easier (but makes updates more complicated)\
+\n Basically a RW layer for Fedora (except home directories), enabled by default"
 QuillInit -> FuseOverlay
 
-Fedora: "Fedora\n Pure ARM fedora with systemd (Adjusted things for pinenote)"
-FuseOverlay -> Fedora
+Fedora: "Fedora\n Pure ARM fedora with systemd (with a few tweaks for the PineNote)"
+FuseOverlay -> Fedora: "Some chroot magic"
 
 Qoms: "🪶🦀Qoms\
 \n Quill OS main service"
@@ -46,15 +46,15 @@ Greetd: "🦀Greetd"
 Qoms -> Greetd: "Logs in the user"
 
 Niri: "🦀Niri\
-\n Niri's window tiling makes the experience very similar to tablet's,\
-\n but it's linux, wayland!"
+\n Niri's window tiling makes the experience very similar to a tablet's,\
+\n but it's Linux+Wayland!"
 Greetd -> Niri
 
 Eww: "🦀Eww widgets\
 \n For the toolbar\
-\n custom looking and eink adjusted🪶"
+\n custom look, tweaked for eInk🪶"
 Dunst: "Dunst\
-\n for notifications deamon"
+\n Notifications daemon"
 SwayBg: "swaybg\
 \n For the wallpaper"
 squeekboard: "🦀squeekboard\
