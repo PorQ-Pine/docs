@@ -12,7 +12,7 @@ QuillStrap: "🪶QuillStrap\
 UMSK -> QuillStrap
 QuillStrap -> uboot: "Also flashes U-Boot (installs really everything)"
 
-HRDLK: "HRDL's awesome kernel"
+HRDLK: "👥HRDL's kernel"
 uboot -> HRDLK
 
 Alpine: "Alpine\
@@ -53,6 +53,9 @@ Greetd -> Niri
 Eww: "🦀Eww widgets\
 \n For the toolbar\
 \n custom look, tweaked for eInk🪶"
+EwwDataProvider: "🦀🪶Eww data provider\
+\n Talks to eww providing data that it needs"
+EwwDataProvider -> Eww: Talking
 Dunst: "Dunst\
 \n Notifications daemon"
 SwayBg: "swaybg\
@@ -60,11 +63,16 @@ SwayBg: "swaybg\
 squeekboard: "🦀squeekboard\
 \n For the virtual keyboard\
 \n(maliit keyboard did not work)"
+PinenoteService: "🦀👥Phantomas pinenote service\
+\n Provides interface to change screen settings"
+EwwDataProvider <-> PinenoteService: "dbus"
 
 Niri -> Eww
+Niri -> EwwDataProvider
 Niri -> Dunst
 Niri -> SwayBg
 Niri -> squeekboard
+Niri -> PinenoteService
 
 NwgDrawer: "nwg-drawer as app launcher"
 Niri -> NwgDrawer
