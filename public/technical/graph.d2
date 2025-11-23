@@ -29,6 +29,10 @@ QuillInit: {|md
 |}
 Alpine -> QuillInit
 
+Gocryptfs: "Gocryptfs\
+\n encrypts/decrypts the home directory"
+QuillInit -> Gocryptfs: "Decrypts before providing logging data"
+
 FuseOverlay: "🪶fuse-overlayfs setup for rootfs\
 \n Allows reverting changes made to Fedora (see below) easier (but makes updates more complicated)\
 \n Basically a RW layer for Fedora (except home directories), enabled by default"
