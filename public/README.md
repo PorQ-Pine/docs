@@ -1,6 +1,20 @@
 #### [Video demo here](https://github.com/PorQ-Pine/docs/blob/main/public/demo.md)
 
-### What is this
+### TLDR, What's the point
+Quill OS goal is to provide an experience for the pinenote which is:
+- Refined, so special software written for eink, adjusted for eink
+- Easy to use, without a external keyboard, just as a regular android eink tablet, but still advanced tiling for users who want it
+- Recoverable in field: Linux users are tinkerers, things break because of us and without us, Quill OS should be recoverable to usable state without another machine.
+- Reasonable security but hackable, home directory encryption by default for example, but still hackable, no limitations to what you do to it
+- Easy to install/reproductible, even from scratch by compiling, everything automated
+
+### Current state
+Usable for advanced users, but there are many major and minor issues to be solved.
+
+### Technical overview
+Look into [technical/README.md](./technical/README.md)
+
+### Who, what, when
 So let's explain a bit what is what where and who when
 
 There is old Quill OS (Formerly InkBox), here: 
@@ -14,17 +28,14 @@ That OS was killed by the manufacturer. This organisation, is named PorQ-Pine, s
 
 ### Design principles
 Because we learn from our mistakes, sometimes (And the Pinenote user target is different from Kobo devices)
+
+(A bit of the same as the TLDR)
+
 1. Rust.
 2. It should be easily reproductible (so [quillstrap](https://github.com/PorQ-Pine/quillstrap/tree/main) exists)
 3. Hackable but recoverable without needing another machine. These 2 points conflict with each other, usually, so balancing them is needed
 4. Reasonable security (So home directory encryption by default, but don't conflict with point 3)
 5. Choosing solutions which are easily maintanable and follow current standards of doing things (As in, not hacky solutions, old Quill was a bit spaghetti in the case of design)
-
-### Current state
-Usable for advanced users, but there are many major and minor issues to be solved.
-
-### Technical overview
-Look into [technical/README.md](./technical/README.md)
 
 * * *
 
