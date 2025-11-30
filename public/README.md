@@ -7,7 +7,7 @@ Quill OS goal is to provide an experience for the pinenote which is:
 - Recoverable in field: Linux users are tinkerers, things break because of us and without us, Quill OS should be recoverable to usable state without another machine.
 - Reasonable security but hackable, home directory encryption by default for example, but still hackable, no limitations to what you do to it
 - Easy to install/reproductible, even from scratch by compiling, everything automated
-  - All the software written by the community for the pinenote (HRDL kernel, etc) is installed by us for you, no need for you to be a linux expert to install it and use it
+  - All the software written by the community for the pinenote (HRDL kernel, etc) is managed by us for you, no need for you to be a linux expert to install it and use it
 
 ### Current state
 Usable for advanced users, but there are many major and minor issues to be solved.
