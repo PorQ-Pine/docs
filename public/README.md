@@ -12,7 +12,7 @@ Quill OS goal is to provide an experience for the pinenote which is:
 ### Current state
 Usable for advanced users, but there are many major and minor issues to be solved.
 
-### Technical overview
+### Technical overview / cool graph of the OS
 Look into [technical/README.md](./technical/README.md)
 
 ### Who, what, when
