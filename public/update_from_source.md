@@ -47,7 +47,9 @@ useradd szybet
 passwd szybet
 ```
 
-Then do:
+(Even tho if you don't cleaned RW rootfs, you should still do this step, at least partially like I described):
+
+Then do 
 - but `rm -rf /home/szybet/.*` will remove all your personal configurations. You can generally skip this step, if not, backup things!
 - but `cp -r /etc/skel/.* /home/szybet/` will overwrite configs you changed that we manage (so xournalpp, eww...), I think you should still apply it, maybe back up your changes, then restore them manually via gui
 
