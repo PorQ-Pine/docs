@@ -6,7 +6,7 @@ This guide provides a step-by-step walkthrough for installing Quill OS on a Pine
 
 ---
 
-### Step 0: Backup your stuff manually
+## Step 0: Backup your stuff manually
 Backup everything that is important to you and you might need a quick access to this data. While we create a full backup in the next steps, if you need some data from it soon, easily accessible it's still better to copy it over by yourself
 
 ## Part 1: Prerequisites & Environment Setup
