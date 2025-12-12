@@ -1,0 +1,2 @@
+- `public` directory is what you are searching for
+- `chaotic` is outdated and chaotic, don't look there
