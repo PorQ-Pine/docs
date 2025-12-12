@@ -12,6 +12,11 @@ Quill OS goal is to provide an experience for the pinenote which is:
 ### Current state
 Usable for advanced users, but there are many major and minor issues to be solved.
 
+### Install & Update
+Keep in mind those are prototype guides:
+- [Installing](https://github.com/PorQ-Pine/docs/blob/main/public/install_from_scratch.md)
+- [Updating](https://github.com/PorQ-Pine/docs/blob/main/public/update_from_source.md)
+
 ### Technical overview / cool graph of the OS
 Look into [technical/README.md](./technical/README.md)
 
