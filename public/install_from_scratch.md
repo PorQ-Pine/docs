@@ -1,4 +1,4 @@
-# Installing Quill OS from Scratch: A Detailed Guide
+# Installing Quill OS from Scratch
 
 This guide provides a step-by-step walkthrough for installing Quill OS on a PineNote device from source code. It's not the final form on how it should be done, but for now we have only this.
 
