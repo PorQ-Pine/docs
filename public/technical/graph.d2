@@ -1,18 +1,19 @@
 CPU magic -> uboot
-uboot: "U-Boot\
-\n🪶With modified boot entries so they look better"
+uboot: "👥U-Boot\
+\n 🪶With modified look"
 
 UMSK: "🪶UMS (USB Mass Storage) kernel\
-\nMinimal kernel (with embedded initrd) that exposes the whole disk over USB\
-\nIt's located in the logo partition, which is hacky but makes it more break-resistant"
+\n Minimal kernel (with embedded initrd) that exposes the whole disk over USB\
+\n It's located in the logo partition, which is hacky but makes it more break-resistant"
 uboot -> UMSK
 
 QuillStrap: "🪶QuillStrap\
-\nInstalls all other things (mainly via UMS kernel)"
+\n Installs all other things (mainly via UMS kernel)"
 UMSK -> QuillStrap
 QuillStrap -> uboot: "Also flashes U-Boot (installs really everything)"
 
-HRDLK: "👥HRDL's kernel"
+HRDLK: "👥HRDL's kernel\
+\n 🪶Re-enabled tresholding level"
 uboot -> HRDLK
 
 Alpine: "Alpine\
@@ -38,7 +39,8 @@ FuseOverlay: "🪶fuse-overlayfs setup for rootfs\
 \n Basically a RW layer for Fedora (except home directories), enabled by default"
 QuillInit -> FuseOverlay
 
-Fedora: "Fedora\n Pure ARM fedora with systemd (with a few tweaks for the PineNote)"
+Fedora: "Fedora\
+\n Pure ARM fedora with systemd (with a few tweaks for the PineNote)"
 FuseOverlay -> Fedora: "Some chroot magic"
 
 Qoms: "🪶🦀Qoms\
@@ -51,22 +53,25 @@ Qoms -> Greetd: "Logs in the user"
 
 Niri: "🦀Niri\
 \n Niri's window tiling makes the experience very similar to a tablet's,\
-\n but it's Linux+Wayland!"
+\n but it's Linux+Wayland!\
+\n 🪶Patch for disabling cursor in xournall+optimisations"
 Greetd -> Niri
 
 Eww: "🦀Eww widgets\
 \n For the toolbar\
-\n custom look, tweaked for eInk🪶"
+\n 🪶custom look, tweaked for eInk"
 EwwDataProvider: "🦀🪶Eww data provider\
 \n Talks to eww providing data that it needs"
 EwwDataProvider -> Eww: Talking
 Dunst: "Dunst\
-\n Notifications daemon"
+\n Notifications daemon\
+\n 🪶Themed for eink"
 SwayBg: "swaybg\
 \n For the wallpaper"
 squeekboard: "🦀squeekboard\
 \n For the virtual keyboard\
-\n(maliit keyboard did not work)"
+\n (maliit keyboard did not work)\
+\n 🪶Patch for better app compability"
 PinenoteService: "🦀👥Phantomas pinenote service\
 \n Provides interface to change screen settings"
 EwwDataProvider <-> PinenoteService: "dbus"
@@ -85,5 +90,6 @@ OtherApps: "And all other apps you want"
 NwgDrawer -> OtherApps
 
 Xournalpp: "Xournalpp\
-\n with a custom config and toolbar🪶"
+\n 🪶with a custom config and toolbar\
+\n And some changes to make it work properly"
 NwgDrawer -> Xournalpp
