@@ -131,7 +131,7 @@ This is the second, and most destructive, risky step. You will back up your enti
 2.  In the new U-Boot menu, use the volume keys to navigate and the power button to select the **`UMS kernel`** option.
 3.  Wait like 10 seconds, then connect it to your computer with a USB cable. The internal eMMC will now be exposed as a block device (e.g., `/dev/sdb`).
 
-**⚠️ Important Note on Auto-Mounting:**
+**Important Note on Auto-Mounting:**
 Modern Linux desktops (especially Ubuntu) will automatically mount the device's partitions. This **will interfere** with the backup and partitioning scripts. You must unmount them.
 *   Use your file manager to "Eject" each mounted PineNote partition.
 *   Alternatively, use the `umount` command from your host system's terminal (e.g., `umount /dev/sdb1`).
