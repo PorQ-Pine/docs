@@ -1,3 +1,5 @@
+#### [Newer video demo (2025-12-31) here](https://www.youtube.com/watch?v=HORhEmINF68)
+
 https://github.com/user-attachments/assets/1daaf7f8-9238-4788-ade5-9d02b5a9e040
 
 Some notes about the demo:
