@@ -13,7 +13,7 @@ UMSK -> QuillStrap
 QuillStrap -> uboot: "Also flashes U-Boot (installs really everything)"
 
 HRDLK: "👥HRDL's kernel\
-\n 🪶Re-enabled tresholding level"
+\n 🪶Added tresholding level"
 uboot -> HRDLK
 
 Alpine: "Alpine\
@@ -40,7 +40,7 @@ FuseOverlay: "🪶fuse-overlayfs setup for rootfs\
 QuillInit -> FuseOverlay
 
 Fedora: "Fedora\
-\n Pure ARM fedora with systemd (with a few tweaks for the PineNote)"
+\n Pure ARM fedora with systemd (🪶with a few tweaks for the PineNote)"
 FuseOverlay -> Fedora: "Some chroot magic"
 
 Qoms: "🪶🦀Qoms\
@@ -54,15 +54,15 @@ Qoms -> Greetd: "Logs in the user"
 Niri: "🦀Niri\
 \n Niri's window tiling makes the experience very similar to a tablet's,\
 \n but it's Linux+Wayland!\
-\n 🪶Patch for disabling cursor in xournall+optimisations"
+\n 🪶Patch for disabling cursor in xournall+optimisations and other things"
 Greetd -> Niri
 
 Eww: "🦀Eww widgets\
 \n For the toolbar\
 \n 🪶custom look, tweaked for eInk"
-EwwDataProvider: "🦀🪶Eww data provider\
-\n Talks to eww providing data that it needs"
-EwwDataProvider -> Eww: Talking
+QuillDataProvider: "🦀🪶 Quill data provider\
+\n Provides data, mostly for eww"
+QuillDataProvider -> Eww: Talking
 Dunst: "Dunst\
 \n Notifications daemon\
 \n 🪶Themed for eink"
@@ -73,23 +73,27 @@ squeekboard: "🦀squeekboard\
 \n (maliit keyboard did not work)\
 \n 🪶Patch for better app compability"
 PinenoteService: "🦀👥Phantomas pinenote service\
-\n Provides interface to change screen settings"
-EwwDataProvider <-> PinenoteService: "dbus"
+\n Provides interface to change screen settings\
+\n 🪶Added support for quill-niri windowing bridge"
+
+QuillDataProvider <-> PinenoteService: "dbus"
 
 Niri -> Eww
-Niri -> EwwDataProvider
+Niri -> QuillDataProvider
 Niri -> Dunst
 Niri -> SwayBg
 Niri -> squeekboard
 Niri -> PinenoteService
 
-NwgDrawer: "nwg-drawer as app launcher"
-Niri -> NwgDrawer
+CosmicWanderer: "🦀🪶 Cosmic wanderer\
+\n Eink adjusted app launcher\
+\n Which doesn't crash randomly..."
+Niri -> CosmicWanderer
 
 OtherApps: "And all other apps you want"
-NwgDrawer -> OtherApps
+CosmicWanderer -> OtherApps
 
 Xournalpp: "Xournalpp\
 \n 🪶with a custom config and toolbar\
 \n And some changes to make it work properly"
-NwgDrawer -> Xournalpp
+CosmicWanderer -> Xournalpp
