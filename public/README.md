@@ -1,5 +1,5 @@
 ### Contact and general information
-- You are welcome to join us at our [Matrix space](https://matrix.to/#/#porq-pine:matrix.org)!
+- You are welcome to come and join us at our [Matrix space](https://matrix.to/#/#porq-pine:matrix.org)!
 - You can also watch a [video demo of the OS here](https://github.com/PorQ-Pine/docs/blob/main/public/demo.md).
 
 ### TLDR, What's the point
