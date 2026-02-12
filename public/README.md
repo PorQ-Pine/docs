@@ -1,4 +1,6 @@
-#### [Video demo here](https://github.com/PorQ-Pine/docs/blob/main/public/demo.md)
+### Contact and general information
+- You are welcome to join us at our [Matrix space](https://matrix.to/#/#porq-pine:matrix.org)!
+- You can also watch a [video demo of the OS here](https://github.com/PorQ-Pine/docs/blob/main/public/demo.md).
 
 ### TLDR, What's the point
 Quill OS goal is to provide an experience for the pinenote which is:
@@ -42,8 +44,4 @@ Because we learn from our mistakes, sometimes (And the Pinenote user target is d
 3. Hackable but recoverable without needing another machine. These 2 points conflict with each other, usually, so balancing them is needed
 4. Reasonable security (So home directory encryption by default, but don't conflict with point 3)
 5. Choosing solutions which are easily maintanable and follow current standards of doing things (As in, not hacky solutions, old Quill was a bit spaghetti in the case of design)
-
-* * *
-
-Also, our discord: https://discord.com/invite/uSWtWbY23m
 
