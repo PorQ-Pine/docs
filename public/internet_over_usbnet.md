@@ -32,20 +32,30 @@ fi
   }
   ```
   - Restart `redsocks`: `sudo systemctl restart redsocks`.
-  - Create the following script called `iptables.sh`:
+  - Create the following script called `nftables.sh`:
   ```bash
-  #!/bin/bash
-  # 1. Reset everything
-  sudo iptables -t nat -F
-  
-  # 3. SAFETY: Do not proxy traffic going to the Mac or the local network
-  sudo iptables -t nat -A OUTPUT -d 192.168.3.0/24 -j RETURN
-  sudo iptables -t nat -A OUTPUT -d 127.0.0.1 -j RETURN
-  
-  # 4. REDIRECT: Everything else goes to Redsocks
-  sudo iptables -t nat -A OUTPUT -p tcp -j REDIRECT --to-ports 12345
-  
-  # 5. Add default route via usb0 interface
-  sudo ip route add default dev usb0
+    #!/bin/bash
+    
+    # 1. Clear existing rules to start fresh
+    sudo nft flush ruleset
+    
+    # 2. Define Variables
+    MAC_USB_IP="192.168.3.1"
+    REDSOCKS_PORT="12345"
+    
+    # 3. Create a table and a chain for NAT output
+    sudo nft add table ip nat
+    sudo nft add chain ip nat output { type nat hook output priority filter \; }
+    
+    # 4. SAFETY: Do not proxy local traffic or traffic to the Mac
+    sudo nft add rule ip nat output ip daddr 192.168.3.0/24 return
+    sudo nft add rule ip nat output ip daddr 127.0.0.1 return
+    
+    # 5. REDIRECT: Send all other TCP traffic to Redsocks
+    sudo nft add rule ip nat output ip protocol tcp redirect to :$REDSOCKS_PORT
+    
+    # 6. Routing
+    # Check if the route exists before adding to avoid "File exists" errors
+    sudo ip route replace default dev usb0 via $MAC_USB_IP
   ```
-- Once all of this is done, run `start_tunnel.sh` on the host and `iptables.sh` on the PineNote. You should then be able to connect to the Internet about 30 or 40 seconds later.
+- Once all of this is done, run `start_tunnel.sh` on the host and `nftables.sh` on the PineNote. You should then be able to connect to the Internet about 30 or 40 seconds later.
